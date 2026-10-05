@@ -1,0 +1,17 @@
+name = Inferno Mod
+version = ${version}
+loaderVersion = [21,)
+license = MIT
+issueTrackerURL = https://github.com/Wissam006/mod/issues
+showAsLibrary = false
+authors = ["Wissam006"]
+description = '''A legendary mod featuring the Inferno Laser Blade sword with devastating fire-based abilities and stunning visual effects.'''
+
+[[mods]]
+modId = inferno_mod
+version = 1.0.0
+displayName = "Inferno Mod"
+description = '''The legendary Inferno Laser Blade mod adds an extraordinary magical sword to Minecraft with powerful fire-based laser abilities.'''
+logoFile = "inferno_logo.png"
+authors = ["Wissam006"]
+credits = ["Created by Wissam006"]
