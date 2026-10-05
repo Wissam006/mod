@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "inferno_mod:item/inferno_laser_blade"
+  }
+}

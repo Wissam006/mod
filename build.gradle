@@ -1,0 +1,66 @@
+plugins {
+    id 'net.neoforged.gradle' version '7.0.80'
+    id 'eclipse'
+    id 'idea'
+}
+
+version = "1.21.1-1.0.0"
+group = "com.wissam006.inferno_mod"
+archivesBaseName = "inferno_mod"
+
+repositories {
+    mavenLocal()
+    maven { url = "https://repo.neoforged.net/releases" }
+    maven { url = "https://repo.maven.apache.org/maven2" }
+}
+
+forgottenmc {
+    conversions = "snapshot"
+}
+
+packaging {
+    resources {
+        exclude 'META-INF/proguard/androidx-*.pro'
+        exclude 'META-INF/proguard/androidx-*.pro'
+    }
+}
+
+dependencies {
+    implementation 'net.neoforged:neoforge:21.1.47'
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes([
+            "Specification-Title": "Inferno Mod",
+            "Specification-Vendor": "Wissam006",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": "${version}",
+            "Implementation-Vendor": "Wissam006",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jacocoTestReport {
+    dependsOn testClasses
+    doFirst {
+        classDumpDir = file("$buildDir/filteredClasses/jacoco")
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+java {
+    withSourcesJar()
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+idea {
+    module {
+        excludeDirs += file('run')
+    }
+}

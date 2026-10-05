@@ -1,0 +1,37 @@
+# gradle
+.gradle/
+build/
+
+# eclipse
+.classpath
+.project
+.settings/
+.metadata
+bin/
+projects/
+.c9/
+*.c9search
+*.launch
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+.vscode/
+
+# macos
+.DS_Store
+
+# misc
+gradle.properties
+run/
